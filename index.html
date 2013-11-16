@@ -3,8 +3,7 @@
 <head>
 <title>Image to XBM converter</title>
 <style>
-    body
-    {
+    body {
         margin: 20px;
         background-color: #000;
     }
@@ -36,7 +35,7 @@
          Converts any image supported by the browser, to an XBM image.
          Optimized for LCD displays. Tested with an 12864ZW LCD display with U8GLib for Arduino.
          IMAGE FORMAT: LSB Horizontal, 8 pixels per byte
-         Copyright © 2012 Victor Norgren. All rights reserved.
+         Copyright © 2013 Victor Norgren. All rights reserved.
          */
 
         var MAX_IMAGE_SIZE = 256, THRESHOLD = 109, HEADER = "#define IMAGE_WIDTH {{WIDTH}}\n#define IMAGE_HEIGHT {{HEIGHT}}\nstatic unsigned char IMAGE_NAME[{{LENGTH}}] U8G_PROGMEM = {\n    ",
@@ -135,15 +134,15 @@
 
         writeByteArray = function () {
             var x,
-                    y,
-                    bit = 0,
-                    byteValue = "",
-                    data,
-                    outputIndex = 0,
-                    LSB,
-                    DEC,
-                    HEX,
-                    delimiter = ",";
+                y,
+                bit = 0,
+                byteValue = "",
+                data,
+                outputIndex = 0,
+                LSB,
+                DEC,
+                HEX,
+                delimiter = ",";
 
             for (y = 0; y < height; y += 1) {
                 for (x = 0; x < width; x += 1) {
